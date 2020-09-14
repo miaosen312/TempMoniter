@@ -156,30 +156,9 @@ namespace TempMoniter
                 {
                     ObjPort.PortName = PortName;   //出口名
                     ObjPort.BaudRate = Convert.ToInt32(Rate);  //波特率
-                    //ObjPort.DataBits = Convert.ToInt32(PortData);//数据位处理函数
-                    //switch (PortStop)//停止位
-                    //{
-                    //    case "0": ObjPort.StopBits = StopBits.None; break;
-                    //    case "1": ObjPort.StopBits = StopBits.One; break;
-                    //    case "1.5": ObjPort.StopBits = StopBits.OnePointFive; break;
-                    //    case "2": ObjPort.StopBits = StopBits.Two; break;
-                    //}
-                    //switch (PortParity)//奇偶校验位
-                    //{
-                    //    case "0": ObjPort.Parity = System.IO.Ports.Parity.None; break;
-                    //    case "1": ObjPort.Parity = System.IO.Ports.Parity.Odd; break;
-                    //    case "2": ObjPort.Parity = System.IO.Ports.Parity.Even; break;
-                    //    case "3": ObjPort.Parity = System.IO.Ports.Parity.Mark; break;
-                    //    case "4": ObjPort.Parity = System.IO.Ports.Parity.Space; break;
-                    //}
                     ObjPort.Open();
                     cmb_PortName.Enabled = false;
                     cmb_BaudRate.Enabled = false;
-
-                    //cmb_PortData.Enabled = false;
-                    //cmb_PortParity.Enabled = false;
-                    //cmb_PortStop.Enabled = false;
-
                     return true;
                 }
                 catch (Exception ex)
@@ -193,9 +172,6 @@ namespace TempMoniter
                 ObjPort.Close();
                 cmb_PortName.Enabled = true;
                 cmb_BaudRate.Enabled = true;
-                //cmb_PortData.Enabled = true;
-                //cmb_PortParity.Enabled = true;
-                //cmb_PortStop.Enabled = true;
                 return true;
             }
         }
@@ -207,9 +183,6 @@ namespace TempMoniter
         {
             cmb_PortName.SelectedIndex = 0;
             cmb_BaudRate.SelectedIndex = 0;
-            //cmb_PortData.SelectedIndex = 2;
-            //cmb_PortParity.SelectedIndex = 0;
-            //cmb_PortStop.SelectedIndex = 1;
         }
 
         /// <summary>
@@ -310,57 +283,41 @@ namespace TempMoniter
             Series series1 = Ct_Temp.Series[0];
             series1.ChartType = SeriesChartType.Line;
             series1.BorderWidth = 3;
-            //series1.Color = System.Drawing.Color.Red;
-            //series1.LegendText = "CH1";
             series1.Points.AddXY(X, data.Line_1);
 
             Series series2 = Ct_Temp.Series[1];
             series2.ChartType = SeriesChartType.Line;
             series2.BorderWidth = 3;
-            //series2.Color = System.Drawing.Color.Black;
-            //series2.LegendText = "线路2";
             series2.Points.AddXY(X, data.Line_2);
 
             Series series3 = Ct_Temp.Series[2];
             series3.ChartType = SeriesChartType.Line;
             series3.BorderWidth = 3;
-            //series3.Color = System.Drawing.Color.Blue;
-            //series3.LegendText = "线路3";
             series3.Points.AddXY(X, data.Line_3);
 
             Series series4 = Ct_Temp.Series[3];
             series4.ChartType = SeriesChartType.Line;
             series4.BorderWidth = 3;
-            //series4.Color = System.Drawing.Color.Yellow;
-            //series4.LegendText = "线路4";
             series4.Points.AddXY(X, data.Line_4);
 
             Series series5 = Ct_Temp.Series[4];
             series5.ChartType = SeriesChartType.Line;
             series5.BorderWidth = 3;
-            //series4.Color = System.Drawing.Color.Yellow;
-            //series4.LegendText = "线路4";
             series5.Points.AddXY(X, data.Line_5);
 
             Series series6 = Ct_Temp.Series[5];
             series6.ChartType = SeriesChartType.Line;
             series6.BorderWidth = 3;
-            //series4.Color = System.Drawing.Color.Yellow;
-            //series4.LegendText = "线路4";
             series6.Points.AddXY(X, data.Line_6);
 
             Series series7 = Ct_Temp.Series[6];
             series7.ChartType = SeriesChartType.Line;
             series7.BorderWidth = 3;
-            //series4.Color = System.Drawing.Color.Yellow;
-            //series4.LegendText = "线路4";
             series7.Points.AddXY(X, data.Line_7);
 
             Series series8 = Ct_Temp.Series[7];
             series8.ChartType = SeriesChartType.Line;
             series8.BorderWidth = 3;
-            //series4.Color = System.Drawing.Color.Yellow;
-            //series4.LegendText = "线路4";
             series8.Points.AddXY(X, data.Line_8);
             #endregion
 
@@ -368,7 +325,6 @@ namespace TempMoniter
             ChartArea chartArea = Ct_Temp.ChartAreas[0];
             if (X > chartArea.AxisX.Maximum)
             {
-                //chartArea.AxisX.Minimum = X - 10;
                 chartArea.AxisX.Maximum += 600;
             }
             if (data.Line_1 > chartArea.AxisY.Maximum || data.Line_2 > chartArea.AxisY.Maximum || data.Line_3 > chartArea.AxisY.Maximum || data.Line_4 > chartArea.AxisY.Maximum || data.Line_5 > chartArea.AxisY.Maximum || data.Line_6 > chartArea.AxisY.Maximum || data.Line_7 > chartArea.AxisY.Maximum || data.Line_8 > chartArea.AxisY.Maximum)
