@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temp Monitor", "TempMoniter\Temp Monitor.csproj", "{A0271DB8-702F-451F-A18E-6F157EA7BF42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0271DB8-702F-451F-A18E-6F157EA7BF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0271DB8-702F-451F-A18E-6F157EA7BF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0271DB8-702F-451F-A18E-6F157EA7BF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0271DB8-702F-451F-A18E-6F157EA7BF42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4B734CD-DCB7-4D60-9151-8C965A5EF9E0}
+	EndGlobalSection
+EndGlobal
